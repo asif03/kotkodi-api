@@ -1,0 +1,3002 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KOTKODI API",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/api/v1/project/amount-slab/list/{project_id}": {
+            "get": {
+                "tags": [
+                    "Project Amount Slab"
+                ],
+                "summary": "Get list of Amount Slab",
+                "description": "Returns list of Amount Slab",
+                "operationId": "fda521d6e4a89a83f8ef76ec2cd233d2",
+                "parameters": [
+                    {
+                        "name": "project_id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/amount-slab/create": {
+            "post": {
+                "tags": [
+                    "Project Amount Slab"
+                ],
+                "summary": "Create Amount slab",
+                "description": "Add new Amount slab",
+                "operationId": "ce9da2db89488696527d57cbd67789bc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AmountSlab"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "AmountSlab",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AmountSlab"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/amount-slab/update": {
+            "put": {
+                "tags": [
+                    "Project Amount Slab"
+                ],
+                "summary": "Update Amount slab",
+                "description": "Update Amount slab",
+                "operationId": "814166ff8dcf6881a371cf575cc856f4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAmountSlab"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "AmountSlab",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AmountSlab"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/amount-slab/show/{id}": {
+            "get": {
+                "tags": [
+                    "Project Amount Slab"
+                ],
+                "summary": "Show Amount Slab",
+                "description": "Show Amount Slab by Id",
+                "operationId": "f276b6027f992a99753c8a0bbb8a873c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Amount Slab id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/amount-slab/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Project Amount Slab"
+                ],
+                "summary": "Delete Amount Slab by Id",
+                "description": "Delete Amount Slab by Id",
+                "operationId": "bbbf9ab13576213c36917c1df390e16c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Amount Slab Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-account/list": {
+            "get": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Get list of bank account of a logged in user",
+                "description": "Returns list of bank account of a logged in user",
+                "operationId": "6315bc284ae05952d2098d4b93afc8d2",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-account/create": {
+            "post": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Create Bank Account of a logged in user",
+                "description": "Add new bank account",
+                "operationId": "bf1c1cb88d08aa65b04e29f6d8ddccc9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BankAccount"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Bank Account",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BankAccount"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-account/update": {
+            "put": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Update bank account",
+                "description": "Update bank account",
+                "operationId": "3890657307d32912f17c40c6282dfdb4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBankAccount"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateBankAccount"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-account/show/{id}": {
+            "get": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Show Bank Account Info",
+                "description": "Show Bank Account by Id",
+                "operationId": "754c25b6c8f5bd925c8b8613a5dac8da",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank Account id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-account/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Delete Bank Account by Id",
+                "description": "Delete Bank Account by Id",
+                "operationId": "8518c84167dceb5b727360067e77d25e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank Account Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/category/list": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Get list of category",
+                "description": "Returns list of category",
+                "operationId": "dc79bf47f5c608076c111a3693e4fb09",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/category/create": {
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Create category",
+                "description": "Add new category",
+                "operationId": "78093e6b4a2e3c78176665fba5160fa5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Category"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Category"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/category/update": {
+            "put": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update category",
+                "description": "Update category",
+                "operationId": "269a3b438df504179c6b3b5137659da7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCategory"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateCategory"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/category/show/{id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Show Category Info",
+                "description": "Show Category Info by Id",
+                "operationId": "4f116fc475fe02ab6425e850a4b235df",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/category/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Delete Category by Id",
+                "description": "Delete Category by Id",
+                "operationId": "92fe674be31427f2f19a0021dab8c441",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/comment/create": {
+            "post": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Create comment",
+                "description": "Add new comment",
+                "operationId": "32d977904d9e011151d4c7517f1c440d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Comment"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Comment",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Comment"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/comment/update": {
+            "put": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Update comment",
+                "description": "Update comment",
+                "operationId": "cd1d10800c898036827ad8cd68e1901d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateComment"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateComment"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/comment/show/{id}": {
+            "get": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Show Comment",
+                "description": "Show Comment Info by Id",
+                "operationId": "280d307a0728da48dfec840d6a76a27d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Comment id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/comment/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Delete Comment by Id",
+                "description": "Delete Comment by Id",
+                "operationId": "1592efc855e795c267100f256945782a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Comment Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/country/list": {
+            "get": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "Get list of country",
+                "description": "Returns list of country",
+                "operationId": "622f309551a5913fa2fcb080f8c7fc91",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/currency/list": {
+            "get": {
+                "tags": [
+                    "Currency"
+                ],
+                "summary": "Get list of currency",
+                "description": "Returns list of currency",
+                "operationId": "6fd79121b7216218c11df53c9e4a18a1",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/country/create": {
+            "post": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "Create country",
+                "description": "Add new country",
+                "operationId": "b0b653f482630c221317a61b4b86d02d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Country"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Country",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Country"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/country/update": {
+            "put": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "Update country",
+                "description": "Update country",
+                "operationId": "a090a4e3d303b47db8e0de499c30530a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCountry"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateCountry"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/country/show/{id}": {
+            "get": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "Show Country Info",
+                "description": "Show Country Info by Id",
+                "operationId": "ac8f9e2a62b83db635cb52a45bc8bd0e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Country id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/country/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "Delete Country by Id",
+                "description": "Delete Country by Id",
+                "operationId": "2a08253804d72969b0424696a06d7067",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Country Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/list": {
+            "get": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Get list of Project",
+                "description": "Returns list of Project",
+                "operationId": "65bdf7a382cb58ae016d7267d0e5ecfb",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/my/list": {
+            "get": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "User's project list",
+                "description": "Returns list of User's project",
+                "operationId": "32845dbb862c2b590cd3060ddaf16418",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/live-project-list": {
+            "get": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Get list of live project",
+                "description": "Returns list of live project",
+                "operationId": "1ce734c766ad832017c6d97e8aa23c80",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/project/createOld": {
+            "post": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Create project",
+                "operationId": "8a4aabddb5f43969c0daeeabcb2acb19",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "project_name",
+                                    "category_id",
+                                    "country_id",
+                                    "project_start_date",
+                                    "project_end_date",
+                                    "campaign_start_date",
+                                    "campaign_end_date",
+                                    "intro_video"
+                                ],
+                                "properties": {
+                                    "project_name": {
+                                        "description": "Project name",
+                                        "type": "string",
+                                        "example": "Blood donar"
+                                    },
+                                    "project_subtitle": {
+                                        "description": "Project sub title",
+                                        "type": "string",
+                                        "example": "abcd"
+                                    },
+                                    "category_id": {
+                                        "description": "Category Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "country_id": {
+                                        "description": "Country/Location Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "project_start_date": {
+                                        "description": "Project start date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-08-15 12:00:00"
+                                    },
+                                    "project_end_date": {
+                                        "description": "Project end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-15 12:00:00"
+                                    },
+                                    "campaign_start_date": {
+                                        "description": "Campaign start date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-16 12:00:00"
+                                    },
+                                    "campaign_end_date": {
+                                        "description": "Campaign end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-30 12:00:00"
+                                    },
+                                    "story": {
+                                        "description": "Project story",
+                                        "type": "string",
+                                        "example": "This project for funding <b>money</b>."
+                                    },
+                                    "risks": {
+                                        "description": "Project risks",
+                                        "type": "string",
+                                        "example": "This project for funding <b>money</b>."
+                                    },
+                                    "target_amount": {
+                                        "description": "Project target amount",
+                                        "type": "number",
+                                        "format": "double",
+                                        "example": "5000"
+                                    },
+                                    "min_donation_amount": {
+                                        "description": "Min donation_amount amount",
+                                        "type": "number",
+                                        "format": "double",
+                                        "example": "100"
+                                    },
+                                    "currency_id": {
+                                        "description": "Currency Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "donation_type": {
+                                        "description": "Project donation type: fixed,percentage,mixed",
+                                        "type": "string",
+                                        "example": "fixed"
+                                    },
+                                    "intro_video": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/create": {
+            "post": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Create project",
+                "description": "Create new project",
+                "operationId": "7504b0f167afb0f4903a628ac364a0a1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProject"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Project",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateProject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/updatePhase/{id}": {
+            "put": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Update Project Status/Phase",
+                "operationId": "cf2807a2940b45ee230a11fd5461b4c7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectStatusUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/show/{id}": {
+            "get": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Show Project Info",
+                "description": "Show Project Info by Id",
+                "operationId": "d14a07b30d9a5169dc26c4f85339f403",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/update": {
+            "post": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Update project",
+                "operationId": "a6dd18f7ed1fc9e9f8bbd5844d5d3437",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "description": "Project Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "project_name": {
+                                        "description": "Project name",
+                                        "type": "string",
+                                        "example": "Blood donar"
+                                    },
+                                    "category_id": {
+                                        "description": "Category Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "project_start_date": {
+                                        "description": "Project start date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-08-15 12:00:00"
+                                    },
+                                    "project_end_date": {
+                                        "description": "Project end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-15 12:00:00"
+                                    },
+                                    "campaign_start_date": {
+                                        "description": "Campaign start date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-16 12:00:00"
+                                    },
+                                    "campaign_end_date": {
+                                        "description": "Campaign end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-09-30 12:00:00"
+                                    },
+                                    "phase": {
+                                        "description": "Project phase/status: INIT, CAMPAIGN, PENDING, LIVE, COMPLETE, FAILED",
+                                        "type": "string",
+                                        "example": "INIT"
+                                    },
+                                    "story": {
+                                        "description": "Project story",
+                                        "type": "string",
+                                        "example": "This project for funding <b>money</b>."
+                                    },
+                                    "risks": {
+                                        "description": "Project risks",
+                                        "type": "string",
+                                        "example": "This project for funding <b>money</b>."
+                                    },
+                                    "target_amount": {
+                                        "description": "Project target amount",
+                                        "type": "number",
+                                        "format": "double",
+                                        "example": "5000"
+                                    },
+                                    "min_donation_amount": {
+                                        "description": "Min donation_amount amount",
+                                        "type": "number",
+                                        "format": "double",
+                                        "example": "100"
+                                    },
+                                    "currency_id": {
+                                        "description": "Currency Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "donation_type": {
+                                        "description": "Project donation type: fixed,percentage,mixed",
+                                        "type": "string",
+                                        "example": "fixed"
+                                    },
+                                    "intro_video": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Delete Project by Id",
+                "description": "Delete Project by Id",
+                "operationId": "169dda3174a1b77e27e51a3f8c5a07ed",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/upload-image": {
+            "post": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Upload image",
+                "operationId": "aa0b420ead137627cd952b1c564fd96d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "project_id",
+                                    "image"
+                                ],
+                                "properties": {
+                                    "project_id": {
+                                        "description": "Project Id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project/delete-image/{id}": {
+            "delete": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Delete Project Image by Id",
+                "description": "Delete Project Image by Id",
+                "operationId": "e4c4b5ccc51123a47cac5f028a885f8c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Image Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "project_id",
+                        "in": "query",
+                        "description": "Project Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/list": {
+            "get": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Get list of FAQs of Projects",
+                "description": "Returns list of faqs",
+                "operationId": "ed25cc85b9a2e6020d74092f98851a9f",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/project/{id}": {
+            "get": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Show FAQ by Project ID",
+                "description": "Show Project FAQs by Project Id",
+                "operationId": "022aac782d9ea6e208f3ccc2799c744b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/show/{id}": {
+            "get": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Show FAQ Info",
+                "description": "Show Project FAQ Info by Id",
+                "operationId": "4c44816f8f5dc2b1bb0b2f35901b7fb8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project FAQ id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/create": {
+            "post": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Create project faqs",
+                "description": "Add a new faq",
+                "operationId": "577e81c5641c1fbe81ca96dd3f5bcf91",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectFAQ"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Comment",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProjectFAQ"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/update": {
+            "post": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Update Faq",
+                "description": "Update Faq",
+                "operationId": "d8af118f11046a4e771d799f754003ea",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateFAQ"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateFAQ"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/faq/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Project Faq"
+                ],
+                "summary": "Delete FAQ by Id",
+                "description": "Delete FAQ by Id",
+                "operationId": "a7c1a8bcdac0a49eae36460b86e970ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Faq Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/list": {
+            "get": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Get list of project updates of Projects",
+                "description": "Returns list of project updates",
+                "operationId": "433606d3417421aec35f28c7a20fa4be",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/project/{id}": {
+            "get": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Project wise update list",
+                "description": "Returns list of updates for a particular project",
+                "operationId": "0a7f3fbd8539afa9b92de3656b6f8c7e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/show/{id}": {
+            "get": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Show project update info",
+                "description": "Show Project Update Info by Id",
+                "operationId": "afb3d262c736f74b00910e5feae4d6d6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Project Update id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/create": {
+            "post": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Create project update",
+                "description": "Add a new project update",
+                "operationId": "48f0e14a56c1bacc07febd7487e18c7d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Comment",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProjectUpdate"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/update": {
+            "post": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Update Project update",
+                "description": "Update of project update",
+                "operationId": "0ae90ca1aa358302a25097551387d15e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectUpdateUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProjectUpdateUpdate"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/project-update/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Project Update"
+                ],
+                "summary": "Delete project update by Id",
+                "description": "Delete project update by Id",
+                "operationId": "415a9b3d7a650cecd4c30d5fc966bf0e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Update Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/role/list": {
+            "get": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Get list of role",
+                "description": "Returns list of role",
+                "operationId": "a9417f6f39eb1da7d37749dbf6bfd69b",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/role/create": {
+            "post": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Create role",
+                "description": "Create a new role with permission",
+                "operationId": "ad183d372485d56ecf2e3b1e0ed33071",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Role"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Role",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Role"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/role/update": {
+            "post": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Update role",
+                "description": "Create a new role with permission",
+                "operationId": "bdc7b26295c189ef0d5a0060e6a2fd3d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RoleUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Role",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoleUpdate"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/role/show/{id}": {
+            "get": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Show role info",
+                "description": "Show role by id",
+                "operationId": "3da9154aa51bb622a6556f730bcae577",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Role Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/role/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Delete role by Id",
+                "description": "Delete role by Id",
+                "operationId": "bd3547013c0bbfa2a76c2fe968219fb7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Role Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/register": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Register a new user",
+                "description": "Register a new user",
+                "operationId": "7f7b28a0291b3949494594efeb9c23c4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Login to the system",
+                "description": "Login to the system",
+                "operationId": "92cb166b40895b5fd392964316c95a19",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Login"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/logout": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "User Logout",
+                "description": "User Logout from the system",
+                "operationId": "568ca2aca76ace7376da05795ec1b79d",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/token-verification": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Token Verification",
+                "operationId": "09db69cb060e7d606108346e5508925b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TokenVerification"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/verification-mail-resend": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "User Verification mail re-send",
+                "operationId": "ceaa1b1232b40637dd4f2cdd39114c66",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MailResend"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/profile/show": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Show user profile info",
+                "description": "Show user profile info",
+                "operationId": "82e2ae70530b6697137af50e66c52a0c",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/profile/update": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Update user profile",
+                "operationId": "2f0f6a5fb2d731e6c8a876965521d125",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "description": "User first name",
+                                        "type": "string",
+                                        "example": "Mr"
+                                    },
+                                    "last_name": {
+                                        "description": "User last name",
+                                        "type": "string",
+                                        "example": "XYZ"
+                                    },
+                                    "address_line1": {
+                                        "description": "Address line 1",
+                                        "type": "string",
+                                        "example": "Dhaka"
+                                    },
+                                    "address_line2": {
+                                        "description": "Address line 2",
+                                        "type": "string",
+                                        "example": "Mohakhali"
+                                    },
+                                    "address_line3": {
+                                        "description": "Address line 3",
+                                        "type": "string",
+                                        "example": "TV Gate"
+                                    },
+                                    "phone_country_id": {
+                                        "description": "Phone country id",
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "phone": {
+                                        "description": "phone",
+                                        "type": "string",
+                                        "example": "01746354"
+                                    },
+                                    "gender": {
+                                        "description": "gender",
+                                        "type": "string",
+                                        "example": "MALE"
+                                    },
+                                    "profile_image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AmountSlab": {
+                "title": "AmountSlab",
+                "description": "AmountSlab create request body",
+                "required": [
+                    "project_id",
+                    "start_amount",
+                    "end_amount"
+                ],
+                "properties": {
+                    "project_id": {
+                        "description": "Project Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "start_amount": {
+                        "description": "Start amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "20"
+                    },
+                    "end_amount": {
+                        "description": "End amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "29"
+                    },
+                    "backer_fixed_gain": {
+                        "description": "Backer fixed gain",
+                        "type": "number",
+                        "format": "double",
+                        "example": "5"
+                    },
+                    "backer_percent_gain": {
+                        "description": "Backer percent gain",
+                        "type": "number",
+                        "format": "double",
+                        "example": "2"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateAmountSlab": {
+                "title": "UpdateAmountSlab",
+                "description": "AmountSlab update request body",
+                "properties": {
+                    "id": {
+                        "description": "Amount slab Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "start_amount": {
+                        "description": "Start amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "20"
+                    },
+                    "end_amount": {
+                        "description": "End amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "29"
+                    },
+                    "backer_fixed_gain": {
+                        "description": "Backer fixed gain",
+                        "type": "number",
+                        "format": "double",
+                        "example": "5"
+                    },
+                    "backer_percent_gain": {
+                        "description": "Backer percent gain",
+                        "type": "number",
+                        "format": "double",
+                        "example": "2"
+                    }
+                },
+                "type": "object"
+            },
+            "BankAccount": {
+                "title": "BankA ccount",
+                "description": "Bank Account create request body",
+                "required": [
+                    "account_type",
+                    "account_no",
+                    "account_title",
+                    "bank_name",
+                    "branch_name",
+                    "swift_code"
+                ],
+                "properties": {
+                    "account_type": {
+                        "description": "Account type",
+                        "type": "string",
+                        "example": "Savings"
+                    },
+                    "account_no": {
+                        "description": "Bank account number",
+                        "type": "string",
+                        "example": "1234567, CD-123456"
+                    },
+                    "account_title": {
+                        "description": "Name of the account",
+                        "type": "string",
+                        "example": "Asif, Aman"
+                    },
+                    "bank_name": {
+                        "description": "Name of the bank",
+                        "type": "string",
+                        "example": "Pubali Bank Ltd"
+                    },
+                    "branch_name": {
+                        "description": "Name of the branch",
+                        "type": "string",
+                        "example": "Main branch"
+                    },
+                    "swift_code": {
+                        "description": "Swift code of the bank",
+                        "type": "string",
+                        "example": "PBHLH"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateBankAccount": {
+                "title": "Update Bank Account",
+                "description": "Bank Account update request body",
+                "required": [
+                    "id",
+                    "account_type",
+                    "account_no",
+                    "account_title",
+                    "bank_name",
+                    "branch_name",
+                    "swift_code"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID of bank account",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "account_type": {
+                        "description": "Account type",
+                        "type": "string",
+                        "example": "Savings"
+                    },
+                    "account_no": {
+                        "description": "Bank account number",
+                        "type": "string",
+                        "example": "1234567, CD-123456"
+                    },
+                    "account_title": {
+                        "description": "Name of the account",
+                        "type": "string",
+                        "example": "Asif, Aman"
+                    },
+                    "bank_name": {
+                        "description": "Name of the bank",
+                        "type": "string",
+                        "example": "Pubali Bank Ltd"
+                    },
+                    "branch_name": {
+                        "description": "Name of the branch",
+                        "type": "string",
+                        "example": "Main branch"
+                    },
+                    "swift_code": {
+                        "description": "Swift code of the bank",
+                        "type": "string",
+                        "example": "PBHLH"
+                    }
+                },
+                "type": "object"
+            },
+            "Category": {
+                "title": "Category",
+                "description": "Category create request body",
+                "properties": {
+                    "category_name": {
+                        "description": "Name of project category",
+                        "type": "string",
+                        "example": "Art"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateCategory": {
+                "title": "Update Category",
+                "description": "Category update request body",
+                "properties": {
+                    "id": {
+                        "description": "ID of category",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "category_name": {
+                        "description": "Name of category",
+                        "type": "string",
+                        "example": "Bangladesh"
+                    }
+                },
+                "type": "object"
+            },
+            "Comment": {
+                "title": "Comment",
+                "description": "Comment create request body",
+                "required": [
+                    "project_id",
+                    "comment"
+                ],
+                "properties": {
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "comment": {
+                        "description": "Comment of a project",
+                        "type": "string",
+                        "example": "Art"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateComment": {
+                "title": "Update Comment",
+                "description": "Comment update request body",
+                "required": [
+                    "id",
+                    "project_id",
+                    "comment"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID of Comment",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "comment": {
+                        "description": "Cooment of a project",
+                        "type": "string",
+                        "example": "This porject is good."
+                    }
+                },
+                "type": "object"
+            },
+            "Country": {
+                "title": "Country",
+                "description": "Country create request body",
+                "required": [
+                    "name",
+                    "code",
+                    "email",
+                    "iso_code"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Name of country",
+                        "type": "string",
+                        "example": "Bangladesh"
+                    },
+                    "code": {
+                        "description": "Country code",
+                        "type": "string",
+                        "example": "888"
+                    },
+                    "iso_code": {
+                        "description": "ISO Code",
+                        "type": "string",
+                        "example": "888"
+                    },
+                    "currency": {
+                        "description": "Currency",
+                        "type": "string",
+                        "example": "Taka"
+                    },
+                    "currency_code": {
+                        "description": "Currency Code",
+                        "type": "string",
+                        "example": "255"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateCountry": {
+                "title": "Update Country",
+                "description": "Country update request body",
+                "properties": {
+                    "id": {
+                        "description": "ID of country",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "name": {
+                        "description": "Name of country",
+                        "type": "string",
+                        "example": "Bangladesh"
+                    },
+                    "code": {
+                        "description": "Country code",
+                        "type": "string",
+                        "example": "888"
+                    },
+                    "iso_code": {
+                        "description": "ISO Code",
+                        "type": "string",
+                        "example": "888"
+                    },
+                    "currency": {
+                        "description": "Currency",
+                        "type": "string",
+                        "example": "Taka"
+                    },
+                    "currency_code": {
+                        "description": "Currency Code",
+                        "type": "string",
+                        "example": "255"
+                    }
+                },
+                "type": "object"
+            },
+            "Currency": {
+                "title": "Currency",
+                "description": "Currency create request body",
+                "properties": {
+                    "currency_name": {
+                        "description": "Currency",
+                        "type": "string",
+                        "example": "Taka"
+                    },
+                    "currency_code": {
+                        "description": "Currency Code",
+                        "type": "string",
+                        "example": "255"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateCurrency": {
+                "title": "Update Currency",
+                "description": "Currency update request body",
+                "properties": {
+                    "id": {
+                        "description": "ID of currency",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "currency_name": {
+                        "description": "Currency",
+                        "type": "string",
+                        "example": "Taka"
+                    },
+                    "currency_code": {
+                        "description": "Currency Code",
+                        "type": "string",
+                        "example": "255"
+                    }
+                },
+                "type": "object"
+            },
+            "ProjectFAQ": {
+                "title": "Create Project FAQ",
+                "description": "Project FAQ create request body",
+                "required": [
+                    "project_id",
+                    "question",
+                    "answer"
+                ],
+                "properties": {
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "question": {
+                        "description": "Question of FAQ",
+                        "type": "string",
+                        "example": "What is the poject status?"
+                    },
+                    "answer": {
+                        "description": "Answer of FAQ",
+                        "type": "string",
+                        "example": "Answer of FAQ."
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateFAQ": {
+                "title": "Update Project FAQ",
+                "description": "Project FAQ update request body",
+                "required": [
+                    "id",
+                    "project_id",
+                    "question",
+                    "answer"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID of FAQ",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "question": {
+                        "description": "Question of FAQ",
+                        "type": "string",
+                        "example": "What is the poject status?"
+                    },
+                    "answer": {
+                        "description": "Answer of FAQ",
+                        "type": "string",
+                        "example": "Answer of FAQ."
+                    }
+                },
+                "type": "object"
+            },
+            "CreateProject": {
+                "title": "Project Create",
+                "description": "Project create request body",
+                "required": [
+                    "project_name",
+                    "category_id",
+                    "country_id",
+                    "project_start_date",
+                    "project_end_date",
+                    "campaign_start_date",
+                    "campaign_end_date",
+                    "intro_video"
+                ],
+                "properties": {
+                    "project_name": {
+                        "description": "Name of project",
+                        "type": "string",
+                        "example": "Blood donor"
+                    },
+                    "project_subtitle": {
+                        "description": "Sub-title of project",
+                        "type": "mediumText",
+                        "example": "Stay fit and eat right and donate blood"
+                    },
+                    "category_id": {
+                        "description": "Category id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "country_id": {
+                        "description": "Country/Location Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "project_start_date": {
+                        "description": "Project start date",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2022-08-15"
+                    },
+                    "project_end_date": {
+                        "description": "Project end date",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2022-09-15"
+                    },
+                    "campaign_start_date": {
+                        "description": "Campaign start date",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2022-09-16"
+                    },
+                    "campaign_end_date": {
+                        "description": "Campaign end date",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2022-09-30"
+                    },
+                    "story": {
+                        "description": "Project story",
+                        "type": "string",
+                        "example": "This project for funding <b>money</b>."
+                    },
+                    "risks": {
+                        "description": "Project risks",
+                        "type": "string",
+                        "example": "This project for funding <b>money</b>."
+                    },
+                    "target_amount": {
+                        "description": "Project target amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "5000"
+                    },
+                    "min_donation_amount": {
+                        "description": "Min donation_amount amount",
+                        "type": "number",
+                        "format": "double",
+                        "example": "100"
+                    },
+                    "currency_id": {
+                        "description": "Currency Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "donation_type": {
+                        "description": "Project donation type: fixed,percentage,mixed",
+                        "type": "string",
+                        "example": "fixed"
+                    },
+                    "intro_video": {
+                        "description": "video url",
+                        "type": "string",
+                        "example": "https://www.youtube.com/watch?v=KeDElA1p4y0"
+                    }
+                },
+                "type": "object"
+            },
+            "ProjectStatusUpdate": {
+                "title": "Update Project Status/Phase request",
+                "description": "Updated Project request body",
+                "required": [
+                    "phase"
+                ],
+                "properties": {
+                    "phase": {
+                        "description": "Project status/phase",
+                        "type": "string",
+                        "example": "INIT"
+                    }
+                },
+                "type": "object"
+            },
+            "ProjectUpdate": {
+                "title": "Create Project Update",
+                "description": "Project Update create request body",
+                "required": [
+                    "project_id",
+                    "description"
+                ],
+                "properties": {
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "description": {
+                        "description": "Description of Project Update",
+                        "type": "string",
+                        "example": "Early Access is Open for 24 Hours!"
+                    }
+                },
+                "type": "object"
+            },
+            "ProjectUpdateUpdate": {
+                "title": "Update Project Update",
+                "description": "Project Update update request body",
+                "required": [
+                    "id",
+                    "project_id",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Id of a project update",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "project_id": {
+                        "description": "Id of a project",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "description": {
+                        "description": "Description of Project Update",
+                        "type": "string",
+                        "example": "Early Access is Open for 24 Hours!"
+                    }
+                },
+                "type": "object"
+            },
+            "Role": {
+                "title": "Create New Role",
+                "description": "Role create request body",
+                "required": [
+                    "name",
+                    "permission"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Name of Role",
+                        "type": "string",
+                        "example": "Super Admin"
+                    },
+                    "permission": {
+                        "description": "Permission against role",
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": ""
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "example": "[{name : country-list},{name : country-create}]"
+                    }
+                },
+                "type": "object"
+            },
+            "RoleUpdate": {
+                "title": "Update  Role",
+                "description": "Role update request body",
+                "required": [
+                    "id",
+                    "name",
+                    "permission"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Id of Role",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "name": {
+                        "description": "Name of Role",
+                        "type": "string",
+                        "example": "Super Admin"
+                    },
+                    "permission": {
+                        "description": "Permission against role",
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": ""
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "example": "[{name : country-list},{name : country-create}]"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "title": "Register user request",
+                "description": "Register user request body",
+                "required": [
+                    "first_name",
+                    "last_name",
+                    "email",
+                    "user_name",
+                    "password",
+                    "password_confirmation"
+                ],
+                "properties": {
+                    "first_name": {
+                        "description": "First name of user",
+                        "type": "string",
+                        "example": "MD"
+                    },
+                    "last_name": {
+                        "description": "Last name of user",
+                        "type": "string",
+                        "example": "Rafiq"
+                    },
+                    "email": {
+                        "description": "Email ID of user",
+                        "type": "string",
+                        "example": "mdrafiq@gmail.com"
+                    },
+                    "user_name": {
+                        "description": "User name of user",
+                        "type": "string",
+                        "example": "mdrafiq"
+                    },
+                    "password": {
+                        "description": "Password of the user",
+                        "type": "string",
+                        "example": "12345678"
+                    },
+                    "password_confirmation": {
+                        "description": "Confirm password",
+                        "type": "string",
+                        "example": "12345678"
+                    }
+                },
+                "type": "object"
+            },
+            "Login": {
+                "title": "Login",
+                "description": "Login request body",
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "email": {
+                        "description": "Email of user",
+                        "type": "string",
+                        "example": "mdrafiq@gmail.com"
+                    },
+                    "password": {
+                        "description": "Password of the user",
+                        "type": "string",
+                        "example": "12345678"
+                    }
+                },
+                "type": "object"
+            },
+            "TokenVerification": {
+                "title": "Token Verification",
+                "description": "Verify Token",
+                "required": [
+                    "token"
+                ],
+                "properties": {
+                    "token": {
+                        "description": "User Token",
+                        "type": "string",
+                        "example": "xxxxxxxxx"
+                    }
+                },
+                "type": "object"
+            },
+            "MailResend": {
+                "title": "Verification mail resend",
+                "description": "Verification mail resend",
+                "required": [
+                    "email"
+                ],
+                "properties": {
+                    "email": {
+                        "description": "User email",
+                        "type": "string",
+                        "example": "mdrafiq10015@gmail.com"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "Token": {
+                "type": "http",
+                "description": "Login with email and password to get the JWT token",
+                "name": "Auth Token",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
